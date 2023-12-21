@@ -72,7 +72,6 @@ def create_new_contact_if_not_found(email, firstname, lastname):
         return jsonify({'error': 'Error adding contact'}), 500
 
     output = response.json()
-    print(output)
     output_string = output['results'][0]['properties']['firstname'] +" "+ output['results'][0]['properties']['lastname']
 
     return output_string
