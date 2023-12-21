@@ -1,3 +1,4 @@
+from dotenv import load_dotenv
 from flask import Blueprint, request, jsonify
 import os
 import requests
@@ -7,7 +8,11 @@ from actions.hubspot import search_hubspot_contact_by_email, verify_contact_iden
 
 openai = Blueprint('openai', __name__)
 
+load_dotenv()
+
 api_key = os.getenv('CHATBOT_OPENAI_API_KEY')
+
+
 
 
 
